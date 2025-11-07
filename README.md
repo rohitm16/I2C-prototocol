@@ -4,7 +4,8 @@ This repository contains the Verilog source code and testbench for an FPGA-based
 
 This project was completed as a requirement for [Your Course Name or Project Context].
 
-EDA Playground: <-- PASTE YOUR PUBLIC EDA PLAYGROUND LINK HERE
+EDA Playground: [PASTE YOUR PUBLIC EDA PLAYGROUND LINK HERE]
+
 Table of Contents
 
     Key Features
@@ -17,11 +18,7 @@ Table of Contents
 
     Detailed Design Explanation
 
-    Design Challenges and Solutions
-
-    FPGA Resource Utilization
-
-Key Features
+🔑 Key Features
 
     Dynamic Address Remapping: Translates a pre-defined VIRTUAL_ADDR on the master bus to a REAL_ADDR on the slave bus.
 
@@ -35,7 +32,7 @@ Key Features
 
     Synthesizable Logic: Written in Verilog using FPGA-friendly constructs (FSMs, counters, shift registers).
 
-Architecture Overview
+🏗️ Architecture Overview
 
 The translator acts as a "man-in-the-middle" device. It is composed of three main modules orchestrated by a central controller.
 
@@ -53,39 +50,37 @@ The translator acts as a "man-in-the-middle" device. It is composed of three mai
 
         It mirrors the STOP condition to cleanly terminate the transaction on both buses.
 
-Data Flow:
-[System Master] <---(Master Bus)---> [Translator Slave Core] <---(Internal Logic)---> [Translator Master Core] <---(Slave Bus)---> [Target Slave]
-File Structure
-code Code
+Data Flow
 
-    
+[System Master] <---(Master Bus)---> [Translator Slave Core] <---(Internal Logic)---> [Translator Master Core] <---(Slave Bus)---> [Target Slave]
+
+📁 File Structure
+
 .
-├── rtl/                      
+├── rtl/
 │   ├── i2c_defines.v         # Defines I2C master commands
 │   ├── i2c_master.v          # Command-driven I2C Master module
 │   ├── i2c_slave_core.v      # I2C Slave module with clock stretching
 │   └── i2c_translator_top.v  # Top-level controller and FSM
 │
-├── sim/                      
+├── sim/
 │   ├── system_master_model.v # Behavioral model of the main I2C Master
 │   ├── target_slave_model.v  # Behavioral model of I2C Slave devices
 │   └── tb_i2c_translator.v   # Top-level testbench
 │
-├── reports/                  
+├── reports/
 │   ├── resource_utilization.txt # FPGA resource report
 │   └── timing_summary.txt    # FPGA timing summary
 │
 └── README.md                 # This documentation file
 
-  
+🚀 How to Simulate
 
-How to Simulate
-
-Prerequisites:
+Prerequisites
 
     A Verilog simulator (e.g., Vivado XSim, ModelSim, Verilator, or any simulator on EDA Playground).
 
-Running the Simulation:
+Running the Simulation
 
     Compile all Verilog files from the rtl/ and sim/ directories.
 
@@ -93,7 +88,8 @@ Running the Simulation:
 
     Run the simulation for at least 2 ms to observe all test scenarios.
 
-Expected Outcome:
+Expected Outcome
+
 The testbench (tb_i2c_translator.v) executes three scenarios:
 
     Scenario 1: Writes to a non-translated address (OTHER_ADDR). The translator should ignore this.
@@ -103,10 +99,12 @@ The testbench (tb_i2c_translator.v) executes three scenarios:
     Scenario 3: Reads data from the VIRTUAL_ADDR. The data from the REAL_ADDR slave should be correctly read back.
 
 A successful simulation will print the following messages to the console:
-code Code
 
-    
 SCENARIO 2 PASSED: Data 0xc0 written to target slave.
 SCENARIO 3 PASSED: Read data 0xad from target slave.
 
-  
+📖 Detailed Design Explanation
+
+A comprehensive, beginner-friendly explanation of the entire codebase, module by module, is available in the DOCUMENTATION.md file.
+
+(Note: You will need to create a new file named DOCUMENTATION.md and paste the detailed explanation from our previous conversation into it.)
