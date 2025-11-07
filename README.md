@@ -4,7 +4,8 @@ This repository contains the Verilog source code and testbench for an FPGA-based
 
 This project was completed as a requirement for [Your Course Name or Project Context].
 
-EDA Playground: <-- PASTE YOUR PUBLIC EDA PLAYGROUND LINK HERE
+EDA Playground: 
+
 Table of Contents
 
     Key Features
@@ -58,8 +59,6 @@ Data Flow:
 File Structure
 code Code
 
-    
-.
 ├── rtl/                      
 │   ├── i2c_defines.v         # Defines I2C master commands
 │   ├── i2c_master.v          # Command-driven I2C Master module
@@ -75,7 +74,7 @@ code Code
 │   ├── resource_utilization.txt # FPGA resource report
 │   └── timing_summary.txt    # FPGA timing summary
 │
-└── README.md                 # This documentation file
+└── README.md                 # This documentation filecode…]()
 
   
 
